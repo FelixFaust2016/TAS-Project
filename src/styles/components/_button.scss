@@ -1,0 +1,22 @@
+.login-btn {
+    padding: 15px 20px;
+    font-size: 10px;
+    color: white;
+    background: var(--active-hover);
+    border: none;
+    border-radius: 27px;
+    outline: none;
+    cursor: pointer;                                                                
+    transition: 0.2s ease-in-out;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.login-btn:active {
+    transform: scale(1.1);
+}
+@media(max-width: 1000px) { 
+    .login-btn {
+        padding: 10px 15px;
+        font-size: 10px;
+    }
+}

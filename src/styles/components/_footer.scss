@@ -1,0 +1,32 @@
+.footer{
+    display: flex;
+    flex-direction: column;
+    height: 10rem;
+    background-color: #1C2331;
+    color: #fff;
+    margin-top: 5rem;
+}
+
+.footer .icon-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex: 0.5;
+}
+
+.footer .icon-div .icon{
+    font-size: 20px;
+    font-weight: 300;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.footer .copyright-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,.2);
+    flex: 1;
+}

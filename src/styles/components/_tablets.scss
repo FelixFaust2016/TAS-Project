@@ -1,0 +1,77 @@
+.tablet{
+    height: 200px;
+    width: 300px;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    // background-color: rgb(81, 255, 0);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.tablet .icon-div{
+    // background-color: blue;
+    // flex: 1;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tablet .header-div{
+    display: flex;
+    flex-direction: column;
+    // flex: 0.8;
+    height: 25%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.tablet .header-div h2{
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.tablet .header-div::after{
+    content: '';
+    width: 200px;
+    background-color: black;
+    height: 5px;
+    border-radius: 100px;
+    margin-bottom: 5px;
+}
+
+.tablet .text-div{
+    // background-color: red;
+    // flex: 0.8;
+    height: 50%;
+    text-align: center;
+    text-overflow: ellipsis;
+}
+
+.tablet .text-div p{
+    font-size: 13px;
+}
+
+// <----------------------------------------------->
+
+.tablets .first-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    flex-wrap: wrap;
+    // height: auto;
+}
+
+.tablets h1{
+    font-weight: 300;
+    text-align: center;
+}

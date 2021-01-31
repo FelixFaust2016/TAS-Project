@@ -1,0 +1,134 @@
+.signup{
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: #133C1F94;
+}
+
+.signup .logo-side{
+    // background-color: green;
+    display: block;
+    background: url('assets/register1.svg');
+    background-size: 800px 800px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    flex: 1.2;
+    height: 100vh;
+}
+
+.signup .form-side{
+    background-color: white;
+    flex: 1.2;
+    height: 100vh;
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup .logo{
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+.signup .tec {
+   
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start !important;
+    justify-content: flex-end;
+}
+
+.signup .tec .welcome-text {
+    background-color: #133C1F;
+    height: 50%;
+    width: 40%;
+    margin-bottom:  -2%;
+    margin-left: 10%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup .name{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0;
+}
+
+.signup .name .input {
+    width: 100%;
+}
+
+.signup .na{
+    margin-top: 20px;
+}
+
+.signup .center-form{
+    display: flex;
+    flex-direction: row;
+    // background-color: red;
+    height: 100%;
+    width: 80%;
+    // align-items: center;
+    justify-content: center;
+    margin-top: 40%;
+}
+
+.signup .centered-box{
+    display: flex;
+    flex-direction: column;
+    // background-color: green;
+    width: 95%;
+}
+
+// .signup .form{
+//     width: 100%;
+// }
+
+.signup form input[name=firstname] {
+    width: 60%;
+    margin-right: 20px;
+}
+
+.signup form input[name=lastname] {
+    width: 40%;
+}
+
+.signup #have-account{
+    margin-top: 15px;
+    color: #C4C4C4;
+    // font-family: 'Lato', sans-serif;
+    font-family: Pavanam,sans-serif;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.textDeco-none {
+    text-decoration: none;
+    color: $main-green;
+}
+
+.signup .reg-text {
+    color: $main-green;
+}
+
+.signup #create-text {
+    font-size: 15px;
+}
+
+.signup .balloon{
+    height: 130%;
+    width: 30%;
+    position: absolute;
+    right: 0;
+    background: url('assets/floating.svg');
+    background-size: contain;
+    margin-right: 20px;
+}

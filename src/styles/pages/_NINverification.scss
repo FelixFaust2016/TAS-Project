@@ -1,0 +1,121 @@
+.ninverification{
+    display: flex;
+    flex-direction: column;
+    // background-color: hotpink;
+    max-height: 100%;
+    // justify-content: center;
+    align-items: center;
+    // height: 100vh;
+}
+
+.ninverification .page-holder {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.ninverification .contain {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    height: 37vh;
+    border-radius: 8px;
+    margin-top: 30px !important;
+}
+
+.ninverification .result-container {
+    width: 50%;
+    // background: chartreuse;
+    display: flex;
+    justify-content: center;
+}
+
+.ninverification .contain .form-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 37vh;
+    border-radius: 8px;
+    margin-top: 30px !important;
+    width: 70%;
+    background-color: #F4F7FA;
+
+}
+
+.ninverification .form-container {
+    // background-color: green;
+    margin-top: 20px;
+    width: 80%;
+}
+
+.ninverification h2{
+    // background-color: indigo;
+    // float: left;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-between;
+    font-family: Lato,sans-serif;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+}
+
+.ninverification .form-container #checkbox-container{
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    border-radius: 5px;
+    height: 80px;
+    justify-content: start;
+    align-items: center;
+}
+
+.ninverification #form-header{
+    background-color: $main-green; 
+    width: 100%;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+.ninverification .lower-part{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    height: 50%;
+    background-color: #F4F7FA;
+    border-radius: 8px;
+}
+
+.ninverification .lower-part .form-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.ninverification #icon {
+    // background-color: chartreuse;
+    height: 140px;
+    width: 140px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border: solid;
+    border-width: 3px;
+    border-color: $main-green;
+    border-radius: 5px;
+}
+
+.ninverification .lower-part .form-container div {
+    // display: flex;
+    flex: 1;
+    // background-color: red;
+}
+
+// .ninverification .lower-part .form-container:last-child {
+//     display: flex;
+//     flex: 1;
+//     background-color: yellow;
+
+// }
