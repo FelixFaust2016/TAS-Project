@@ -7,8 +7,8 @@ import Button from "./Button";
 
 const Navigation = (props) => {
   const [nav, setNav] = useState([
-    { name: "Home", link: "" },
-    { name: "Verify-NIN", link: "" },
+    { name: "Home", link: "/" },
+    { name: "Verify-NIN", link: "/ninverification" },
     { name: "Register-NIN", link: "" },
     { name: "About us", link: "" },
     { name: "FAQS", link: "" },
@@ -22,7 +22,9 @@ const Navigation = (props) => {
       <div style={{ flex: "1" }}></div>
       <ul style={{ top: hamm && "0px" }}>
         {nav.map((nav, i) => (
-          <li key={i}>{nav.name}</li>
+          <Link style={{ color: "white" }} to={nav.link}>
+            <li key={i}>{nav.name}</li>
+          </Link>
         ))}
       </ul>
 

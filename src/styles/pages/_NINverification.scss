@@ -1,121 +1,59 @@
-.ninverification{
-    display: flex;
-    flex-direction: column;
-    // background-color: hotpink;
-    max-height: 100%;
-    // justify-content: center;
-    align-items: center;
-    // height: 100vh;
-}
-
-.ninverification .page-holder {
-    display: flex;
+.ninverification-container {
     width: 100%;
     height: 100vh;
-}
-
-.ninverification .contain {
     display: flex;
-    flex-direction: column;
-    width: 50%;
+    justify-content: center;
     align-items: center;
-    height: 37vh;
-    border-radius: 8px;
-    margin-top: 30px !important;
+    background: #eeffee;
 }
 
-.ninverification .result-container {
-    width: 50%;
-    // background: chartreuse;
+.nin-search {
+    width: 70%;
+    padding: 40px 30px;
+    background-color: white;
+    border-radius: 8px;
+    margin: 0px auto;
     display: flex;
     justify-content: center;
 }
 
-.ninverification .contain .form-holder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 37vh;
-    border-radius: 8px;
-    margin-top: 30px !important;
-    width: 70%;
-    background-color: #F4F7FA;
-
-}
-
-.ninverification .form-container {
-    // background-color: green;
-    margin-top: 20px;
-    width: 80%;
-}
-
-.ninverification h2{
-    // background-color: indigo;
-    // float: left;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: space-between;
-    font-family: Lato,sans-serif;
-    color: white;
-    font-size: 20px;
-    text-align: center;
-    padding: 10px;
-}
-
-.ninverification .form-container #checkbox-container{
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: row;
-    width: 40%;
-    border-radius: 5px;
-    height: 80px;
-    justify-content: start;
-    align-items: center;
-}
-
-.ninverification #form-header{
-    background-color: $main-green; 
+.nin-cont {
     width: 100%;
-    border-top-right-radius: 8px;
-    border-top-left-radius: 8px;
 }
 
-.ninverification .lower-part{
+.nin-cont h1 {
+    font-size: 24px;
+    color: black;
+    text-align: center;
+}
+
+#checkbox-container {
     display: flex;
-    flex-direction: column;
-    width: 80%;
+    justify-content: space-between;
     align-items: center;
-    height: 50%;
-    background-color: #F4F7FA;
-    border-radius: 8px;
+    width: 150px;
+    font-size: 12px;
+    margin: 20px auto 0px auto;
 }
 
-.ninverification .lower-part .form-container{
-    display: flex;
-    flex-direction: row;
+#checkbox-container input {
+    padding: 0px;
+    cursor: pointer;
 }
-
-.ninverification #icon {
-    // background-color: chartreuse;
-    height: 140px;
-    width: 140px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    border: solid;
-    border-width: 3px;
-    border-color: $main-green;
-    border-radius: 5px;
+.result-container {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.404);
+    top: 0;
+    left: 0;
+    overflow: hidden;
 }
-
-.ninverification .lower-part .form-container div {
-    // display: flex;
-    flex: 1;
-    // background-color: red;
+.lower-part {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
 }
-
-// .ninverification .lower-part .form-container:last-child {
-//     display: flex;
-//     flex: 1;
-//     background-color: yellow;
-
-// }
