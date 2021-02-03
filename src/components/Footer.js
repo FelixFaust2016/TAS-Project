@@ -17,7 +17,7 @@ const Tablets = (props) => {
             </div>
             <div className='copyright-div'>
                 <Copyright />
-                <p>2020 Copyright: negst</p>
+                <p style={{fontSize:'0.9rem'}}>2020 Copyright: negst</p>
             </div>
         </div>
 

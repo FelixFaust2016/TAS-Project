@@ -7,6 +7,7 @@ import "aos/dist/aos.css";
 
 import Navigation from "../components/Navigation";
 import Card from "../components/Cards";
+import Footer from "../components/Footer";
 
 import landing from "../assets/banner.svg";
 import Button from "../components/Button";
@@ -80,27 +81,29 @@ const LandingPage = (props) => {
     <div className="landing">
       <Navigation />
       <div className="banner">
-        <div className="banner-text">
-          <h1>can the government be accountable</h1>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries
-            <br />
-            <br />
-            <br />
-            <Button name={"Contact us"} />
-          </p>
-        </div>
-        <div className="banner-img">
-          <img src={landing} />
+        <div className=" row">
+          <div className="col-md-6 banner-text">
+            <h1>can the government be accountable</h1>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries
+              <br />
+              <br />
+              <br />
+              <Button name={"Contact us"} />
+            </p>
+          </div>
+          <div className="banner-img col-md-6">
+            <img src={landing} />
+          </div>
         </div>
       </div>
       <div className="aspect">
-        <h1 style={{ textAlign: "center", fontSize: "40px" }}>OUR AREAS</h1>
-        <p style={{ fontSize: "12px", color: "grey", textAlign: "center" }}>
+        <h1 style={{ textAlign: "center", fontSize: "2.5rem" }}>OUR AREAS</h1>
+        <p style={{ fontSize: "0.95rem", color: "grey", textAlign: "center" }}>
           {" "}
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry
@@ -158,25 +161,28 @@ const LandingPage = (props) => {
       </div>
 
       <div className="services">
-        <h1 style={{ textAlign: "center", fontSize: "40px" }}>
+        <h1 style={{ textAlign: "center", fontSize: "2.5rem" }}>
           QUICK SERVICES
         </h1>
-        <p style={{ fontSize: "12px", color: "grey", textAlign: "center" }}>
+        <p style={{ fontSize: "0.9rem", color: "grey", textAlign: "center" }}>
           {" "}
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry
         </p>
-        <div className="service-cont">
-          {serv.map((service, i) => (
-            <Card
-              key={i}
-              icon={service.icon}
-              hd={service.hd}
-              text={service.text}
-            />
-          ))}
+        <div className="container">
+          <div className="row">
+            {serv.map((service, i) => (
+              <Card
+                key={i}
+                icon={service.icon}
+                hd={service.hd}
+                text={service.text}
+              />
+            ))}
+          </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

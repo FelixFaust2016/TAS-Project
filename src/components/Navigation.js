@@ -20,13 +20,13 @@ const Navigation = (props) => {
     <nav className="nav-cont">
       <Logo color={"white"} />
       <div style={{ flex: "1" }}></div>
-      <ul style={{ top: hamm && "0px" }}>
+      <div className="nav-list" style={{ top: hamm && "0px" }}>
         {nav.map((nav, i) => (
-          <Link style={{ color: "white" }} to={nav.link}>
+          <Link style={{ color: "white", textDecoration:'none' }} to={nav.link}>
             <li key={i}>{nav.name}</li>
           </Link>
         ))}
-      </ul>
+      </div>
 
       <Link to="signin">
         <Button name={"login"} />

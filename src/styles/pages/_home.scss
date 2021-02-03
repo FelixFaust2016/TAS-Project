@@ -1,40 +1,40 @@
 .banner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100vh;
+    // height: 100vh;
     flex-wrap: wrap;
-    padding: 0px 150px;
+    padding: 150px 150px;
     background-color: var(--main-color);
 }
 
-.banner-text,
+// .banner-text,
 .banner-img {
     width: 500px;
-    margin-top: 80px;
+    // margin-top: 80px;
 }
 
 .banner-img img {
     width: 100%;
 }
-
 .banner-text h1 {
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 40px;
+    font-size: 2rem;
     color: white;
 }
 
 .banner-text p {
     color: white;
+    font-size: 0.90rem;
 }
 
 .aspect {
     padding: 100px 150px;
 }
-
+.aspect h1, .services h1 {
+    color: var(--active-hover);
+}
 .aspect p {
     color: grey;
+    font-size: 0.95rem;
 }
 
 .aspect-cont {
@@ -118,8 +118,8 @@
 
 
 .services {
-    // width: 100%;
-    padding: 100px 150px;
+    width: 100%;
+    padding: 100px 0px;
 }
 
 .card-cont:hover {
@@ -137,12 +137,12 @@
 }
 
 .ss i {
-    font-size: 12px;
+    font-size: 0.95rem;
     margin-left: 3px;
 }
 
 .services {
-    padding: 100px 150px
+    padding: 100px 0px
 }
 
 .service-cont {
@@ -161,6 +161,7 @@
     }
 
     .banner {
+        width: 100%;
         padding: 40px 150px;
     }
 

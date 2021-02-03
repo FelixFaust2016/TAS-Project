@@ -12,6 +12,7 @@ import Btn from "../components/Button";
 import Input from "../components/Input";
 
 import search from "../assets/search.png";
+import Navigation from "../components/Navigation";
 
 const NINverification = (props) => {
   const [count, setCount] = useState(false);
@@ -83,50 +84,53 @@ const NINverification = (props) => {
   };
 
   return (
-    <div className="ninverification-container">
-      <div className="nin-cont">
-        <h1>SEARCH FOR NIN</h1>
-        <div className="nin-search">
-          <form>
-            <h3
-              style={{
-                fontSize: "13px",
-                margin: "0px",
-                padding: "0px",
-                textAlign: "center",
-              }}
-            >
-              Input correct NIN
-            </h3>
-            <Input
-              name={"nin"}
-              placeholder={"eg.788789******* "}
-              type={"text"}
-              img={search}
-            />
-            <div id="checkbox-container">
-              <div>
-                <input
-                  type="checkbox"
-                  name="robot"
-                  style={{
-                    backgroundColor: "white",
-                    width: "50px",
-                    marginTop: "0px",
-                  }}
-                />
+    <div>
+      {" "}
+      <Navigation />
+      <div className="ninverification-container">
+        <div className="nin-cont">
+          <h1>SEARCH FOR NIN</h1>
+          <div className="nin-search">
+            <form>
+              <h3
+                style={{
+                  fontSize: "13px",
+                  margin: "0px",
+                  padding: "0px",
+                  textAlign: "center",
+                }}
+              >
+                Input correct NIN
+              </h3>
+              <Input
+                name={"nin"}
+                placeholder={"eg.788789******* "}
+                type={"text"}
+                img={search}
+              />
+              <div id="checkbox-container">
+                <div>
+                  <input
+                    type="checkbox"
+                    name="robot"
+                    style={{
+                      backgroundColor: "white",
+                      width: "50px",
+                      marginTop: "0px",
+                    }}
+                  />
+                </div>
+                <div>
+                  <span>are you a robot?</span>
+                </div>
               </div>
-              <div>
-                <span>are you a robot?</span>
-              </div>
-            </div>
-            <button className="input-btn">Search</button>
-          </form>
+              <button className="input-btn">Search</button>
+            </form>
+          </div>
         </div>
-      </div>
-      {/* <Nav navigate={navigateToLogin} style={{ position: 'relative', backgroundColor: '#1C2331' }} /> */}
+        {/* <Nav navigate={navigateToLogin} style={{ position: 'relative', backgroundColor: '#1C2331' }} /> */}
 
-      {/* <div className="page-holder">
+        {/* <div className="page-holder">
         <div className="contain" style={{ marginTop: "100px" }}>
           <div className="form-holder">
             <div id="form-header">
@@ -166,7 +170,7 @@ const NINverification = (props) => {
           </div>
         </div> */}
 
-      {/* <Modal
+        {/* <Modal
           isOpen={modal}
           // onAfterOpen={afterOpenModal}
           onRequestClose={closeModal}
@@ -189,32 +193,43 @@ const NINverification = (props) => {
           </div>
         </Modal> */}
 
-      {/* {count && ( */}
-        {/* <div className="result-container">
-          <div className="lower-part" style={{ marginTop: "60px" }}>
-            <div id="form-header">
-              <h2>
-                <b>Mr. Nzeogu Ibrahim Ayomide</b>
-              </h2>
-            </div>
-            <div id="icon"></div>
-            <div className="form-container">
+        {/* {count && ( */}
+        <div className="result-container">
+          <div className="ver-outer">
+            <h2>Your Details</h2>
+            <div className="lower-part">
               <div>
-                <p>NIN: {nin}</p>
-                <p>State of origin: Imo State</p>
-                <p>Local government: Sango Ota</p>
-                <p>DOB: 11 march 1985</p>
+                <p>
+                  <span>NIN:</span> {nin}
+                </p>
+                <p>
+                  <span>State of origin:</span> Imo State
+                </p>
+                <p>
+                  <span>Local government:</span> Sango Ota
+                </p>
+                <p>
+                  <span>DOB:</span> 11 march 1985
+                </p>
               </div>
               <div>
-                <p>Sex: male</p>
-                <p>Occupation: medical doctor</p>
-                <p>Local government: Sango Ota</p>
-                <p>DOB: 11 march 1985</p>
+                <p>
+                  <span>Sex:</span> male
+                </p>
+                <p>
+                  <span>Occupation:</span> medical doctor
+                </p>
+                <p>
+                  <span>Local government:</span> Sango Ota
+                </p>
+                <p>
+                  <span>DOB:</span> 11 march 1985
+                </p>
               </div>
             </div>
           </div>
-        </div> */}
-      {/* )} */}
+        </div>
+      </div>
     </div>
   );
 };

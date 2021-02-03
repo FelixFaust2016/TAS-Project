@@ -1,6 +1,6 @@
 .ninverification-container {
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 110px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,6 +40,7 @@
     padding: 0px;
     cursor: pointer;
 }
+
 .result-container {
     position: absolute;
     width: 100%;
@@ -49,11 +50,33 @@
     top: 0;
     left: 0;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
 }
+
+.result-container h2 {
+    // font-size: 1.5rem;
+    color: var(--active-hover);
+}
+
+.result-container span {
+    font-weight: bold;
+}
+
 .lower-part {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lower-part p {
+    font-size: 0.8rem;
+}
+
+.ver-outer {
+    width: 500px;
+    border-radius: 12px;
+    background-color: white;
+    padding: 40px 30px;
 }
