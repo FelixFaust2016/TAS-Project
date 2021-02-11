@@ -8,6 +8,9 @@ import {
   NavLink,
   useHistory,
 } from "react-router-dom";
+import axios from 'axios';
+import { apiConfig } from '../config/axios';
+
 import Button from "../components/Button";
 import Input from "../components/Input";
 
@@ -22,7 +25,23 @@ const SignIn = (props) => {
 
   const handleSignIn = (e) => {
     e.preventDefault();
-    history.push("/home");
+    // history.push("/home");
+
+
+    const details = {
+      usernameOrEmail: e.target[0].value,
+      password: e.target[1].value
+    }
+    console.log(details)
+    axios.post('http://174.138.46.137:8083/api/negst/auth/signin',
+
+      details
+
+    ).then((response) => {
+      console.log(response.data);
+    }).catch(e => {
+      console.log(e.response.data);
+    })
   };
 
   return (
@@ -35,7 +54,7 @@ const SignIn = (props) => {
         <div className="form-div-hd">
           <p>continue for free</p>
           <p>Sign in</p>
-          <form>
+          <form onSubmit={handleSignIn}>
             <Input
               placeholder={"name@example.com"}
               type={"email"}

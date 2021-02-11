@@ -8,6 +8,8 @@ import {
   NavLink,
   useHistory,
 } from "react-router-dom";
+import axios from 'axios';
+import { apiConfig } from '../config/axios';
 
 import Input from "../components/Input";
 import Button from "../components/Button";
@@ -28,9 +30,31 @@ const SignUp = (props) => {
     history.push("/home");
   };
 
-  const handleChange = () => {};
+  const handleChange = () => { };
 
-  const handleSubmit = () => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const details = {
+      firstName: e.target[0].value,
+      lastName: e.target[1].value,
+      email: e.target[2].value,
+      username: e.target[3].value,
+      password: e.target[4].value
+    }
+
+    // console.log(firstName, lastName, email, userName, password);
+    console.log(details)
+    axios.post('http://174.138.46.137:8083/api/negst/auth/signup',
+      details
+
+    ).then((response) => {
+      console.log(response.data);
+    }).catch( e => {
+      console.log(e.response.data);
+    })
+    // console.log(new FormData(e.target));
+  };
 
   return (
     <div className="form-container">
@@ -42,7 +66,7 @@ const SignUp = (props) => {
         <div className="form-div-hd">
           <p>start for free</p>
           <p>Create an account with NEA</p>
-          <form>
+          <form onSubmit={handleSubmit}>
             <Input
               placeholder={"Emeka, Jude, Arinze etc."}
               type={"text"}
