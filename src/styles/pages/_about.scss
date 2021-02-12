@@ -1,0 +1,115 @@
+.about-banner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 150px;
+    background-color: var(--main-color);
+    flex-wrap: wrap;
+}
+
+.about-ill {
+    width: 400px;
+}
+
+.about-ill img {
+    width: 100%;
+}
+
+.about-banner h1 {
+    font-size: 2.5rem;
+    color: white;
+    font-weight: bold;
+    font-family: var(--main-font);
+    padding: 0px;
+    margin: 0px;
+}
+
+.about-banner-text {
+    width: 400px;
+}
+
+.about-banner-text span {
+    font-size: 0.8rem;
+    color: white;
+}
+
+.vision {
+    padding: 100px 150px;
+}
+
+.vision h1 {
+    color: var(--active-color);
+}
+
+.vision-body {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.mission {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mission div {
+    width: 500px;
+    margin: 0px auto;
+}
+
+.mission h1 {
+    color: var(--active-color);
+    text-align: center;
+}
+
+.mission p {
+    font-size: 1.0rem;
+    text-align: center;
+}
+
+.history {
+    padding: 100px 150px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.history h1 {
+    color: var(--active-color);
+}
+
+.history-img {
+    width: 300px;
+}
+
+.history-img img {
+    width: 100%;
+}
+
+@media(max-width: 1000px) {
+    .about-banner {
+        padding: 50px 40px;
+    }
+
+    .about-banner-text,
+    .about-ill {
+        margin-top: 10px;
+    }
+
+    .vision {
+        padding: 100px 40px;
+    }
+
+    .history {
+        padding: 100px 40px;
+    }
+
+    .history-img {
+        margin-top: 20px;
+    }
+}

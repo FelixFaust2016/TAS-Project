@@ -80,3 +80,12 @@
     background-color: white;
     padding: 40px 30px;
 }
+
+.close {
+    position: absolute;
+    top:20px;
+    right:20px;
+    color: white;
+    cursor: pointer;
+    z-index: 2;
+}

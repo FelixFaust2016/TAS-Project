@@ -10,8 +10,9 @@ const Navigation = (props) => {
     { name: "Home", link: "/" },
     { name: "Verify-NIN", link: "/ninverification" },
     { name: "Register-NIN", link: "" },
-    { name: "About us", link: "" },
-    { name: "FAQS", link: "" },
+    { name: "About us", link: "/about" },
+    { name: "FAQS", link: "/faq" },
+    {name:"Apps", link: "/apps"}
   ]);
 
   const [hamm, setHam] = useState(false);

@@ -20,6 +20,27 @@ const NINverification = (props) => {
   const [email, setEmail] = useState("");
   const [modal, setModal] = useState(false);
 
+  const [postId, setPostId] = useState("");
+
+  const handleModal = (e) => {
+    e.preventDefault();
+
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ title: "React Hooks" }),
+    };
+
+    fetch(
+      "http://174.138.46.137:8083/api/negst/nin-verification/verify",
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((data) => setPostId(data.id));
+
+    setModal(!modal);
+  };
+
   const config = {
     reference: new Date().getTime(),
     email: email,
@@ -124,7 +145,9 @@ const NINverification = (props) => {
                   <span>are you a robot?</span>
                 </div>
               </div>
-              <button className="input-btn">Search</button>
+              <button onClick={handleModal} className="input-btn">
+                Search
+              </button>
             </form>
           </div>
         </div>
@@ -194,41 +217,44 @@ const NINverification = (props) => {
         </Modal> */}
 
         {/* {count && ( */}
-        <div className="result-container">
-          <div className="ver-outer">
-            <h2>Your Details</h2>
-            <div className="lower-part">
-              <div>
-                <p>
-                  <span>NIN:</span> {nin}
-                </p>
-                <p>
-                  <span>State of origin:</span> Imo State
-                </p>
-                <p>
-                  <span>Local government:</span> Sango Ota
-                </p>
-                <p>
-                  <span>DOB:</span> 11 march 1985
-                </p>
-              </div>
-              <div>
-                <p>
-                  <span>Sex:</span> male
-                </p>
-                <p>
-                  <span>Occupation:</span> medical doctor
-                </p>
-                <p>
-                  <span>Local government:</span> Sango Ota
-                </p>
-                <p>
-                  <span>DOB:</span> 11 march 1985
-                </p>
+        {modal && (
+          <div className="result-container">
+            <i onClick={handleModal} className="fas fa-times close"></i>
+            <div className="ver-outer">
+              <h2>Your Details</h2>
+              <div className="lower-part">
+                <div>
+                  <p>
+                    <span>NIN:</span> {nin}
+                  </p>
+                  <p>
+                    <span>State of origin:</span> Imo State
+                  </p>
+                  <p>
+                    <span>Local government:</span> Sango Ota
+                  </p>
+                  <p>
+                    <span>DOB:</span> 11 march 1985
+                  </p>
+                </div>
+                <div>
+                  <p>
+                    <span>Sex:</span> male
+                  </p>
+                  <p>
+                    <span>Occupation:</span> medical doctor
+                  </p>
+                  <p>
+                    <span>Local government:</span> Sango Ota
+                  </p>
+                  <p>
+                    <span>DOB:</span> 11 march 1985
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

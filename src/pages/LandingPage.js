@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 import Aos from "aos";
 
@@ -17,6 +18,7 @@ import business from "../assets/business.svg";
 import citizens from "../assets/citizens.svg";
 
 const LandingPage = (props) => {
+  const history = useHistory();
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
@@ -24,58 +26,92 @@ const LandingPage = (props) => {
     {
       icon: "fas fa-book",
       hd: "Open Government",
-      text:
+      slug: "open_government",
+      subtext:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+      text:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
     },
     {
       icon: "fas fa-passport",
       hd: "Nigerian E-Passport",
-      text:
+      slug: "nigerian_e_passport",
+      subtext:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+      text:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
     },
     {
       icon: "fas fa-plane",
       hd: "E-VISA",
-      text:
+      slug: "e_visa",
+      subtext:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+      text:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
     },
     {
       icon: "fas fa-clipboard-list",
       hd: "Diaspora NIN Enrollment",
+      slug: "diaspora_nin_enrollment",
       text:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+      text:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
     },
     {
       icon: "fas fa-user-check",
       hd: "NIN Verification",
-      text:
+      slug: "nin_verification",
+      subtext:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+      text:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
     },
     {
       icon: "fas fa-tv",
       hd: "Digital Content Integration",
-      text:
+      slug: "digital_content_integration",
+      subtext:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+      text:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
     },
     {
       icon: "fas fa-money-bill-alt",
       hd: "Payment System",
-      text:
+      slug: "payment_system",
+      subtext:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+      text:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
     },
     {
       icon: "fas fa-graduation-cap",
       hd: "Certificate Verification",
-      text:
+      slug: "certificate_verification",
+      subtext:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+      text:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
     },
     {
       icon: "fas fa-sort-numeric-up",
       hd: "Agency Ranking",
-      text:
+      slug: "agency_ranking",
+      subtext:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+      text:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
     },
   ]);
+
+  const selectThisCard = (service) => {
+    history.push({
+      pathname: `/slug/${service.slug || service.text}`,
+      state: service,
+    });
+  };
 
   return (
     <div className="landing">
@@ -174,9 +210,10 @@ const LandingPage = (props) => {
             {serv.map((service, i) => (
               <Card
                 key={i}
+                selectCard={() => selectThisCard(service)}
                 icon={service.icon}
                 hd={service.hd}
-                text={service.text}
+                text={service.subtext}
               />
             ))}
           </div>
