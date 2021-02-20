@@ -166,7 +166,7 @@ const LandingPage = (props) => {
             <img src={business} />
           </div>
           <div data-aos="fade-up" className="aspect-text">
-            <h1>BUSSINESS</h1>
+            <h1>BUSINESS</h1>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
