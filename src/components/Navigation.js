@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import Logo from "../components/Logo";
 import Button from "./Button";
 
+import Apper from "../components/Apps";
+
 const Navigation = (props) => {
   const [nav, setNav] = useState([
     { name: "Home", link: "/" },
@@ -12,7 +14,6 @@ const Navigation = (props) => {
     { name: "Register-NIN", link: "" },
     { name: "About us", link: "/about" },
     { name: "FAQS", link: "/faq" },
-    {name:"Apps", link: "/apps"}
   ]);
 
   const [hamm, setHam] = useState(false);
@@ -23,10 +24,14 @@ const Navigation = (props) => {
       <div style={{ flex: "1" }}></div>
       <div className="nav-list" style={{ top: hamm && "0px" }}>
         {nav.map((nav, i) => (
-          <Link style={{ color: "white", textDecoration:'none' }} to={nav.link}>
+          <Link
+            style={{ color: "white", textDecoration: "none" }}
+            to={nav.link}
+          >
             <li key={i}>{nav.name}</li>
           </Link>
         ))}
+        <Apper />
       </div>
 
       <Link to="signin">
