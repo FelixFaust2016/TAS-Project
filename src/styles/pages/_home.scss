@@ -14,6 +14,7 @@
 .banner-img img {
     width: 100%;
 }
+
 .banner-text h1 {
     text-transform: uppercase;
     font-weight: 600;
@@ -29,9 +30,12 @@
 .aspect {
     padding: 100px 150px;
 }
-.aspect h1, .services h1 {
+
+.aspect h1,
+.services h1 {
     color: var(--active-hover);
 }
+
 .aspect p {
     color: grey;
     font-size: 0.95rem;
@@ -151,6 +155,32 @@
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
+}
+
+.hover {
+    transition: 0.2s ease-in-out;
+    padding: 10px 10px;
+}
+
+.hover i {
+    color: #3CB371;
+}
+
+.hover-text {
+    color: black;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.hover:hover {
+    background-color: var(--main-color);
+}
+
+.hover:hover.hover i {
+    color: white;
+}
+.hover:hover .hover-text {
+    color: white;
 }
 
 @media(max-width: 1024px) {
