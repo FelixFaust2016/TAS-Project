@@ -15,6 +15,7 @@
   "author": "prime",
   "license": "MIT",
   "dependencies": {
+    "@agney/react-loading": "^0.1.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-regular-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
@@ -32,6 +33,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.11",
+    "dotenv-webpack": "^6.0.4",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^6.2.0",
     "hero-slider": "^2.0.3",
@@ -50,6 +52,7 @@
     "react-redux": "^5.1.2",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
     "sass-loader": "^6.0.7",
     "semantic-ui-react": "^2.0.1",
     "style-loader": "^0.18.2",

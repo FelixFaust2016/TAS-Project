@@ -1,6 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import Modal from "react-modal";
+
+import { verifyNIN } from "../actions/ninVerificationAction";
+import { loadingBar, ninVerificationModalStyles } from "../config/helperFunctions";
+
+import x from "../assets/redx.png";
+import dumper from "../assets/dummyperson.png";
 import {
   usePaystackPayment,
   PaystackButton,
@@ -13,89 +19,102 @@ import Input from "../components/Input";
 
 import search from "../assets/search.png";
 import Navigation from "../components/Navigation";
+import { red } from "@material-ui/core/colors";
+
 
 const NINverification = (props) => {
+
+  const { containerProps, indicatorEl } = loadingBar();
+  const { customStylesRes, customStylesPay } = ninVerificationModalStyles();
+
+  const [data, setData] = useState({});
   const [count, setCount] = useState(false);
-  const [nin, setNin] = useState(111111111111);
-  const [email, setEmail] = useState("");
+  const [nin, setNin] = useState('');
   const [modal, setModal] = useState(false);
-  const [image, setData] = useState('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')
+  const [rmodal, setRmodal] = useState(true);
+  const [error, setError] = useState();
 
-  const [postId, setPostId] = useState("");
+  const [paid, setPaid] = useState(false);
+  const [payModal, setPayModal] = useState();
+  const [email, setEmail] = useState("");
 
-  const handleModal = (e) => {
-    e.preventDefault();
-
-    const requestOptions = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ title: "React Hooks" }),
-    };
-
-    fetch(
-      "http://174.138.46.137:8083/api/negst/nin-verification/verify",
-      requestOptions
-    )
-      .then((response) => response.json())
-      .then((data) => setPostId(data.id));
-
-    setModal(!modal);
-  };
 
   const config = {
     reference: new Date().getTime(),
     email: email,
     amount: 100000,
-    publicKey: "pk_test_992fef72533ef47a3b00c4d1aa8e403e50c434c4",
+    publicKey: process.env.PAYSTACK_KEY,
   };
 
-  const customStyles = {
-    content: {
-      top: "30%",
-      left: "50%",
-      right: "auto",
-      bottom: "auto",
-      width: "20%",
-      marginRight: "-50%",
-      transform: "translate(-50%, -50%)",
-    },
-  };
-  Modal.setAppElement("#app");
 
-  const navigateToLogin = (e, page) => {
+  Modal.setAppElement('#app');
+
+  const handleModal = (e) => {
     e.preventDefault();
-    props.history.push(page);
+
+    setData({});
+    setError("");
+    // setModal(!modal);
+
+
+    if (!paid) {
+      setPayModal(true);
+    } else {
+      setModal(!modal);
+      props.verifyNIN(nin).then((res) => {
+
+        if (data.constructor !== Object) {
+          setRmodal(true);
+        }
+        setData(res);
+        console.log(res);
+      }).catch((err) => {
+        setModal(false);
+        setError("There was a server/network error please try again");
+        console.log("idauda", err)
+      })
+
+    }
+
   };
 
   const handlePaystackSuccessAction = (reference) => {
-    console.log(reference);
-    setCount(1);
-    console.log(count);
+    // console.log(reference);
+    // setCount(1);
+    // console.log(count);
+    setModal(!modal);
+    setPayModal(false);
+    setPaid(true);
+    props.verifyNIN(nin).then((res) => {
+
+      if (data.constructor !== Object) {
+        setRmodal(true);
+      }
+      setData(res);
+      console.log(res);
+    }).catch((err) => {
+      setModal(false);
+      setError("There was a server/network error please try again");
+      console.log("idauda", err)
+    })
   };
 
   const handlePaystackCloseAction = () => {
     console.log(count);
   };
 
-  const handleInput = (e) => {
-    e.preventDefault();
-    let nin = e.target.elements.nin.value.trim();
-    setNin(nin);
-    if (!count) {
-      setModal(true);
-    }
-  };
-
   const handleEmail = (e) => {
     e.preventDefault();
     let mail = e.target.elements.email.value.trim();
+    // console.log('bfiuweioinoefn')
     setEmail(mail);
     setModal(false);
   };
 
   function closeModal() {
-    setModal(false);
+    setRmodal(false);
     setIsOpen(false);
+    setPayModal(false);
   }
 
   const componentProps = {
@@ -106,14 +125,14 @@ const NINverification = (props) => {
   };
 
   return (
-    <div>
+    <div className="ninverification">
       {" "}
       <Navigation />
-      <div className="ninverification-container">
+      <div className="ninverification-container" >
         <div className="nin-cont">
-          <h1>SEARCH FOR NIN</h1>
+          <h1>VERIFY YOUR NIN</h1>
           <div className="nin-search">
-            <form>
+            <form >
               <h3
                 style={{
                   fontSize: "13px",
@@ -124,12 +143,20 @@ const NINverification = (props) => {
               >
                 Input correct NIN
               </h3>
-              <Input
+              <input
                 name={"nin"}
                 placeholder={"eg.788789******* "}
                 type={"text"}
                 img={search}
+                onChange={(value) => { setNin(value) }}
               />
+              {
+                error
+                &&
+                <div className="error">
+                  <p>{error && error}</p>
+                </div>
+              }
               <div id="checkbox-container">
                 <div>
                   <input
@@ -152,114 +179,141 @@ const NINverification = (props) => {
             </form>
           </div>
         </div>
-        {/* <Nav navigate={navigateToLogin} style={{ position: 'relative', backgroundColor: '#1C2331' }} /> */}
 
-        {/* <div className="page-holder">
-        <div className="contain" style={{ marginTop: "100px" }}>
-          <div className="form-holder">
-            <div id="form-header">
-              <h2>NIN Search</h2>
-            </div>
-            <div className="form-container">
-              <form onSubmit={handleInput}>
+        <div className="modal-holder">
+          <Modal
+            isOpen={payModal}
+            // onAfterOpen={afterOpenModal}
+            shouldCloseOnOverlayClick={true}
+            onRequestClose={closeModal}
+            style={customStylesPay}
+            contentLabel="Example Modal"  >
+            <i onClick={() => setPayModal(false)} className="fas fa-times close" style={{ alignSelf: "flex-end" }}></i>
+
+            <div className="emailform-container" >
+              <form onSubmit={handleEmail}>
+                <label>Please enter your email</label>
                 <input
-                  required
+                  required={true}
                   className="na"
-                  name="nin"
-                  placeholder="788789*******"
+                  name='email'
+                  placeholder="johnbull@abc.com"
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
                 ></input>
-                <div id="checkbox-container">
-                  <input
-                    type="checkbox"
-                    name="robot"
-                    style={{
-                      backgroundColor: "white",
-                      width: "50px",
-                      marginTop: "0px",
-                    }}
-                  />
-                  <label>
-                    <span>are you a robot?</span>
-                  </label>
-                </div>
-                {
-                  // // count
-                  //     ?
-                  <Btn name={"Search"} onSubmit={handleInput} />
-                  // :
-                  // <Btn name={"Search"} onSubmit={handleInput} />
-                }
+
+                <PaystackButton {...componentProps} className="button" />
+
               </form>
             </div>
-          </div>
-        </div> */}
+          </Modal>
+        </div>
 
-        {/* <Modal
-          isOpen={modal}
-          // onAfterOpen={afterOpenModal}
-          onRequestClose={closeModal}
-          style={customStyles}
-          contentLabel="Example Modal"
-        >
-          <div className="form-container">
-            <form onSubmit={handleEmail}>
-              <label>Please enter your email</label>
-              <input
-                required
-                className="na"
-                name="email"
-                placeholder="johnbull@abc.com"
-                onChange={(e) => setEmail(e.target.value)}
-              ></input>
-
-              <PaystackButton {...componentProps} className="button" />
-            </form>
-          </div>
-        </Modal> */}
-
-        {/* {count && ( */}
         {modal && (
-          <div className="result-container">
-            <i onClick={handleModal} className="fas fa-times close"></i>
-            <div className="ver-outer">
-              <h2>Your Details</h2>
-              <div className="lower-part">
-              <img src={`data:image/jpeg;base64,${image}`} />
-                <div>
-                  <p>
-                    <span>NIN:</span> {nin}
-                  </p>
-                  <p>
-                    <span>State of origin:</span> Imo State
-                  </p>
-                  <p>
-                    <span>Local government:</span> Sango Ota
-                  </p>
-                  <p>
-                    <span>DOB:</span> 11 march 1985
-                  </p>
-                </div>
-                <div>
-                  <p>
-                    <span>Sex:</span> male
-                  </p>
-                  <p>
-                    <span>Occupation:</span> medical doctor
-                  </p>
-                  <p>
-                    <span>Local government:</span> Sango Ota
-                  </p>
-                  <p>
-                    <span>DOB:</span> 11 march 1985
-                  </p>
-                </div>
-              </div>
-            </div>
+
+          <div className="result-container" {...containerProps}>
+
+            {(() => {
+              if (Object.entries(data).length === 0) {
+
+                return indicatorEl
+              } else if (data.constructor === Object) {
+                return (
+
+                  <div className="ver-outer">
+                    <div className="result-header">
+                      <h2>Your Details</h2>
+                      <i onClick={handleModal} className="fas fa-times close"></i>
+                    </div>
+                    <div className="img-div">
+                      <img alt={"no image"} src={data.photo.length <= 10 ? dumper : `data:image/jpeg;base64,${data.photo ? data.photo : image}`} style={{ width: '40%' }} />
+
+                    </div>
+                    <div className="lower-part">
+
+                      <div>
+                        <p>
+                          <span>Name:</span> {data !== {} && `${data.firstname} ${data.middlename} ${data.surname}`}
+                        </p>
+                        <p>
+                          <span>Phone:</span> {data !== {} && data.telephoneno}
+                        </p>
+                        <p>
+                          <span>CentralId:</span> {data !== {} && data.centralID}
+                        </p>
+                        <p>
+                          <span>State of origin:</span> {data !== {} && data.nokState}
+                        </p>
+                        <p>
+                          <span>Local government:</span> {data !== {} && data.birthlga}
+                        </p>
+                        <p>
+                          <span>NIN:</span> {data !== {} && data.nin}
+                        </p>
+                      </div>
+                      <div>
+                        <p>
+                          <span>Tracking ID:</span> {data !== {} && data.trackingId}
+                        </p>
+                        <p>
+                          <span>Email:</span> {data && data.email}
+                        </p>
+                        <p>
+                          <span>Sex:</span> {data.gender && data.gender}
+                        </p>
+                        <p>
+                          <span>Religion:</span> {data && data.religion}
+                        </p>
+                        <p>
+                          <span>DOB:</span> {data !== {} && data.birthdate}
+                        </p>
+                        <p>
+                          <span>occupation:</span> {data && data.profession}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                )
+              }
+
+            })()}
+
           </div>
         )}
+
+
+        {
+          (data.constructor !== Object)
+          &&
+          <div>
+
+            < Modal
+              isOpen={rmodal}
+              onAfterOpen={() => { setModal(false) }}
+              onRequestClose={closeModal}
+              style={customStylesRes}
+              contentLabel="Example Modal"
+            >
+              <i onClick={() => setRmodal(false)} className="fas fa-times close" style={{ alignSelf: "flex-end" }}></i>
+
+              <div className="modal-container" >
+                <img src={x} />
+                <p>{data}</p>
+              </div>
+            </Modal>
+          </div>
+        }
+
       </div>
     </div>
   );
 };
 
-export default connect()(NINverification);
+const mapStatesToProps = (state, props) => {
+  return {
+
+  }
+}
+
+export default connect(mapStatesToProps, { verifyNIN })(NINverification);
