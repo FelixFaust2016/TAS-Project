@@ -1,11 +1,14 @@
 //entry -> output
-
+const fs = require('fs');
+const webpack = require('webpack');
 const path = require("path");
+const Dotenv = require('dotenv-webpack');
 
 module.exports = (env, argv) => {
   const isProdution = env === "production";
 
-  console.log(isProdution);
+
+  // console.log(isProdution);
   return {
     entry: "./src/app.js",
     // entry: './src/playground/hoc.js',
@@ -47,11 +50,18 @@ module.exports = (env, argv) => {
         },
       ],
     },
-    plugins: [],
+    plugins: [
+      new webpack.DefinePlugin({
+        'process.env': {
+          NODE_ENV: JSON.stringify('production'),
+        },
+      }),
+      new Dotenv(),
+    ],
     devServer: {
       contentBase: path.join(__dirname, "./public"),
       historyApiFallback: true,
-      port: 9090,
+      port: 9010,
       // historyApiFallback: true,
     },
   };
