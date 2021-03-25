@@ -30,8 +30,7 @@ const LandingPage = (props) => {
       icon: "fas fa-book",
       hd: "Open Government",
       slug: "open_government",
-      subtext:
-        "",
+      subtext: "",
       text:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
     },
@@ -39,8 +38,7 @@ const LandingPage = (props) => {
       icon: "fas fa-passport",
       hd: "Nigerian E-Passport",
       slug: "nigerian_e_passport",
-      subtext:
-        "",
+      subtext: "",
       text:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
     },
@@ -48,8 +46,7 @@ const LandingPage = (props) => {
       icon: "fas fa-plane",
       hd: "E-VISA",
       slug: "e_visa",
-      subtext:
-        "",
+      subtext: "",
       text:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
     },
@@ -57,8 +54,7 @@ const LandingPage = (props) => {
       icon: "fas fa-clipboard-list",
       hd: "Diaspora NIN Enrollment",
       slug: "diaspora_nin_enrollment",
-      text:
-        "",
+      text: "",
       text:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
     },
@@ -66,8 +62,7 @@ const LandingPage = (props) => {
       icon: "fas fa-user-check",
       hd: "NIN Verification",
       slug: "nin_verification",
-      subtext:
-        "",
+      subtext: "",
       text:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
     },
@@ -75,8 +70,7 @@ const LandingPage = (props) => {
       icon: "fas fa-tv",
       hd: "Digital Content Integration",
       slug: "digital_content_integration",
-      subtext:
-        "",
+      subtext: "",
       text:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
     },
@@ -84,8 +78,7 @@ const LandingPage = (props) => {
       icon: "fas fa-money-bill-alt",
       hd: "Payment System",
       slug: "payment_system",
-      subtext:
-        "",
+      subtext: "",
       text:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
     },
@@ -93,8 +86,7 @@ const LandingPage = (props) => {
       icon: "fas fa-graduation-cap",
       hd: "Certificate Verification",
       slug: "certificate_verification",
-      subtext:
-        "",
+      subtext: "",
       text:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
     },
@@ -102,8 +94,7 @@ const LandingPage = (props) => {
       icon: "fas fa-sort-numeric-up",
       hd: "Agency Ranking",
       slug: "agency_ranking",
-      subtext:
-        "",
+      subtext: "",
       text:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
     },
@@ -118,9 +109,9 @@ const LandingPage = (props) => {
 
   const navigate = (dest) => {
     history.push({
-      pathname: dest
-    })
-  }
+      pathname: dest,
+    });
+  };
 
   return (
     <div className="landing">
@@ -129,37 +120,31 @@ const LandingPage = (props) => {
         <div className=" row">
           <div className="col-md-6 banner-text">
             <h1>can the government be accountable</h1>
-            <p>
-              TAS a step-by-step approach for effective eGorvernment
-              implementation with practical guidelines. To develop
-              and implement eGovernment programmes and projects with
-              the aim to promote transparency, efficient delivery of
-              services with increasing Citizens-Government interaction.
+            <p data-aos="fade-in" className="word-changer">
               <br />
               <br />
               <br />
               <Button name={"Contact us"} />
             </p>
           </div>
-          <div className="banner-img col-md-6">
+          <div data-aos="fade-in" className="banner-img col-md-6">
             <img src={landing} />
           </div>
         </div>
       </div>
 
-      <div className="aspect" >
+      <div className="aspect">
         <h1 style={{ textAlign: "center", fontSize: "2.5rem" }}>OUR AREAS</h1>
         <p style={{ fontSize: "0.95rem", color: "grey", textAlign: "center" }}>
           {" "}
           The three main areas for TAS operations
         </p>
-        <div className="aspect-cont container" >
+        <div className="aspect-cont container">
           <div data-aos="fade-down" className="aspect-text">
             <h1>GOVERNMENT</h1>
             <p>
-              Helping to improve the Governments efficiency of
-              operation using technology and to ease the process
-              of governance in the country. 
+              Helping to improve the Governments efficiency of operation using
+              technology and to ease the process of governance in the country.
             </p>
             <Button>Go to government</Button>
           </div>
@@ -177,12 +162,17 @@ const LandingPage = (props) => {
           <div data-aos="fade-up" className="aspect-text">
             <h1>BUSINESS</h1>
             <p>
-              our business model that ensures a proper blend
-              of private sector expertise and resources
-              and public sector data for effective and
+              our business model that ensures a proper blend of private sector
+              expertise and resources and public sector data for effective and
               efficient Service Delivery with focus on sustainability.
             </p>
-            <Button click={() => {navigate("business")}}>Go to business</Button>
+            <Button
+              click={() => {
+                navigate("business");
+              }}
+            >
+              Go to business
+            </Button>
           </div>
         </div>
 
@@ -190,10 +180,10 @@ const LandingPage = (props) => {
           <div data-aos="fade-down" className="aspect-text">
             <h1>CITIZENS</h1>
             <p>
-              The citizens are meant to be aware of what the 
-              government is doing at all times and also influence the decisions
-              of the government. TAS gives citizens the power to be
-              aware of the governments actions.
+              The citizens are meant to be aware of what the government is doing
+              at all times and also influence the decisions of the government.
+              TAS gives citizens the power to be aware of the governments
+              actions.
             </p>
             <Button>Go to citizenship page</Button>
           </div>
@@ -212,10 +202,9 @@ const LandingPage = (props) => {
           {" "}
           Applications built by NeGst global to help facilitate E-government
         </p>
-        
+
         <Apps />
       </div>
-
 
       <div className="services">
         <h1 style={{ textAlign: "center", fontSize: "2.5rem" }}>
