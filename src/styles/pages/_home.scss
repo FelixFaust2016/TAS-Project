@@ -1,98 +1,113 @@
 .banner {
-    // height: 100vh;
-    flex-wrap: wrap;
-    padding: 150px 150px;
-    background-color: var(--main-color);
+  // height: 100vh;
+  flex-wrap: wrap;
+  padding: 150px 150px;
+  background-color: var(--main-color);
 }
 
 // .banner-text,
 .banner-img {
-    width: 500px;
-    // margin-top: 80px;
+  width: 500px;
+  // margin-top: 80px;
 }
 
 .banner-img img {
-    width: 100%;
+  width: 100%;
 }
 
 .banner-text h1 {
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 2rem;
-    color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 2rem;
+  color: white;
 }
 
 .banner-text p {
-    color: white;
-    font-size: 0.90rem;
+  color: white;
+  font-size: 0.9rem;
+}
+.word-changer::before {
+  content: "";
+  //   animation: thewordchange 15s ease-in-out 0s infinite;
+  animation: thewordchange 20s ease-in-out 0s infinite;
+  transition: 0.3s ease-in-out;
 }
 
+@keyframes thewordchange {
+  0% {
+    content: "Confidence in a future Nigeria where individuals, documents and products are truly what they claim to be wherever they are in the world.";
+  }
+  50% {
+    content: "TAS a step-by-step approach for effective eGorvernment implementation with practical guidelines. To develop and implement eGovernment programmes and projects with the aim to promote transparency, efficient delivery of services with increasing Citizens-Government interaction.";
+  }
+  100% {
+    content: "To power a system where the true identity of every individual, document and product is revealed on our Platform and through our services.";
+  }
+}
 .aspect {
-    padding: 100px 150px;
+  padding: 100px 150px;
 }
 
 .aspect h1,
 .services h1 {
-    color: var(--active-hover);
+  color: var(--active-hover);
 }
 
 .aspect p {
-    color: grey;
-    font-size: 0.95rem;
+  color: grey;
+  font-size: 0.95rem;
 }
 
 .aspect-cont {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 100px;
-    flex-wrap: wrap;
-    // width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+  flex-wrap: wrap;
+  // width: 80%;
 }
 
 .aspect-text {
-    width: 45%;
+  width: 45%;
 }
 
 .aspect-img {
-    width: 45%;
+  width: 45%;
 }
 
 .aspect-img img {
-    width: 100%;
+  width: 100%;
 }
 
-
-
-// Card 
+// Card
 .card-cont {
-    width: 250px;
-    height: 300px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    // border-radius: 10px;
-    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.068);
-    margin: 0px 8px;
-    margin-top: 50px;
+  width: 250px;
+  height: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // border-radius: 10px;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.068);
+  margin: 0px 8px;
+  margin-top: 50px;
 }
 
 .foward {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-color: white;
-    transition: 0.3s ease-in-out;
-    // border-radius: 10px;
-    padding: 30px 10px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: white;
+  transition: 0.3s ease-in-out;
+  // border-radius: 10px;
+  padding: 30px 10px;
 }
 
 .foward #icon {
-    width: 100%;
-    font-size: 30px;
-    text-align: center;
-    margin: 0px auto;
-    color: var(--main-color);
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+  margin: 0px auto;
+  color: var(--main-color);
 }
 
 // .foward i {
@@ -101,135 +116,132 @@
 // }
 
 .foward h3 {
-    color: var(--main-color);
+  color: var(--main-color);
 }
 
 .back {
-    width: 100%;
-    height: 100%;
-    background-color: var(--active-hover);
-    transition: 0.3s ease-in-out;
-    // border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--active-hover);
+  transition: 0.3s ease-in-out;
+  // border-radius: 10px;
 }
 
 .foward span {
-    width: 100%;
-    color: var(--main-color);
-    font-size: 12px;
-    text-align: center;
-    cursor: pointer;
+  width: 100%;
+  color: var(--main-color);
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
 }
 
-
-
 .services {
-    width: 100%;
-    padding: 100px 0px;
+  width: 100%;
+  padding: 100px 0px;
 }
 
 .card-cont:hover {
-    box-shadow: transparent;
+  box-shadow: transparent;
 }
 
 .card-cont:hover .foward {
-    transform: rotate(10deg);
-    background-color: #a7f5ca;
+  transform: rotate(10deg);
+  background-color: #a7f5ca;
 }
 
 .ss {
-    color: var(--main-color);
-    margin-top: 80px;
+  color: var(--main-color);
+  margin-top: 80px;
 }
 
 .ss i {
-    font-size: 0.95rem;
-    margin-left: 3px;
+  font-size: 0.95rem;
+  margin-left: 3px;
 }
 
 .services {
-    padding: 100px 0px
+  padding: 100px 0px;
 }
 
 .service-cont {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .hover {
-    transition: 0.2s ease-in-out;
-    padding: 10px 10px;
+  transition: 0.2s ease-in-out;
+  padding: 10px 10px;
 }
 
 .hover i {
-    color: #3CB371;
+  color: #3cb371;
 }
 
 .hover-text {
-    color: black;
-    text-transform: uppercase;
-    font-weight: 800;
+  color: black;
+  text-transform: uppercase;
+  font-weight: 800;
 }
 
 .hover:hover {
-    background-color: var(--main-color);
+  background-color: var(--main-color);
 }
 
 .hover:hover.hover i {
-    color: white;
+  color: white;
 }
 .hover:hover .hover-text {
-    color: white;
+  color: white;
 }
 
-@media(max-width: 1024px) {
+@media (max-width: 1024px) {
+  .banner-text,
+  .banner-img {
+    width: 100%;
+  }
 
-    .banner-text,
-    .banner-img {
-        width: 100%;
-    }
+  .banner {
+    width: 100%;
+    padding: 40px 150px;
+  }
 
-    .banner {
-        width: 100%;
-        padding: 40px 150px;
-    }
+  .aspect {
+    padding: 100px 30px;
+  }
 
-    .aspect {
-        padding: 100px 30px;
-    }
+  .aspect-text,
+  .aspect-img {
+    width: 100%;
+  }
 
-    .aspect-text,
-    .aspect-img {
-        width: 100%;
-    }
-
-    .services {
-        padding: 100px 30px;
-    }
+  .services {
+    padding: 100px 30px;
+  }
 }
 
-@media(max-width: 1000px) {
-    .banner {
-        padding: 40px 30px;
-    }
+@media (max-width: 1000px) {
+  .banner {
+    padding: 40px 30px;
+  }
 
-    .banner-text h1 {
-        font-size: 30px;
-    }
+  .banner-text h1 {
+    font-size: 30px;
+  }
 
-    .banner-text,
-    .banner-img {
-        width: 100%;
-    }
+  .banner-text,
+  .banner-img {
+    width: 100%;
+  }
 
-    .services {
-        padding: 100px 30px;
-    }
+  .services {
+    padding: 100px 30px;
+  }
 
-    .banner-text,
-    .banner-img {
-        margin-top: 20px;
-    }
+  .banner-text,
+  .banner-img {
+    margin-top: 20px;
+  }
 }
