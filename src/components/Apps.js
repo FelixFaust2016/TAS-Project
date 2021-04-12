@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
+import Preloader from "./Preloader";
 
 const Apper = () => {
   const [app, setApp] = useState(false);
+
+  const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
     const handleDropdonClose = () => {
@@ -14,77 +17,80 @@ const Apper = () => {
   }, [app]);
 
   return (
-    <div style={{ position: "relative" }}>
-      <li onClick={() => setApp(true)}>Apps</li>
-      {app && (
-        <div
-          style={{
-            position: "absolute",
-            width: "300px",
-            display: "flex",
-            justifyContent: "space-between",
-            background: "white",
-            borderRadius: "10px",
-            padding: "20px 40px",
-            margin: "0px auto",
-            boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.05)",
-            right: "5px",
-            marginTop: "10px",
-          }}
-        >
+    <div>
+      {isLoading === true ? <Preloader /> : <div></div>}
+      <div style={{ position: "relative" }}>
+        <li onClick={() => setApp(true)}>Apps</li>
+        {app && (
           <div
-            className="hover"
-            style={{ textAlign: "center", cursor: "pointer" }}
+            style={{
+              position: "absolute",
+              width: "300px",
+              display: "flex",
+              justifyContent: "space-between",
+              background: "white",
+              borderRadius: "10px",
+              padding: "20px 40px",
+              margin: "0px auto",
+              boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.05)",
+              right: "5px",
+              marginTop: "10px",
+            }}
           >
-            <div>
-              <i style={{ fontSize: "2.5rem" }} className="fas fa-book"></i>
+            <div
+              className="hover"
+              style={{ textAlign: "center", cursor: "pointer" }}
+            >
+              <div>
+                <i style={{ fontSize: "2.5rem" }} className="fas fa-book"></i>
+              </div>
+              <div
+                className="hover-text"
+                style={{
+                  fontSize: "0.9rem",
+                  marginTop: "10px",
+                }}
+              >
+                tas
+              </div>
             </div>
             <div
-              className="hover-text"
-              style={{
-                fontSize: "0.9rem",
-                marginTop: "10px",
-              }}
+              className="hover"
+              style={{ textAlign: "center", cursor: "pointer" }}
             >
-              tas
-            </div>
-          </div>
-          <div
-            className="hover"
-            style={{ textAlign: "center", cursor: "pointer" }}
-          >
-            <div>
-              <i style={{ fontSize: "2.5rem" }} className="fas fa-book"></i>
+              <div>
+                <i style={{ fontSize: "2.5rem" }} className="fas fa-book"></i>
+              </div>
+              <div
+                className="hover-text"
+                style={{
+                  fontSize: "0.9rem",
+                  marginTop: "10px",
+                }}
+              >
+                tas
+              </div>
             </div>
             <div
-              className="hover-text"
-              style={{
-                fontSize: "0.9rem",
-                marginTop: "10px",
-              }}
+              className="hover"
+              style={{ textAlign: "center", cursor: "pointer" }}
             >
-              tas
+              <div>
+                <i style={{ fontSize: "2.5rem" }} className="fas fa-book"></i>
+              </div>
+              <div
+                className="hover-text"
+                style={{
+                  fontSize: "0.9rem",
+                  marginTop: "10px",
+                }}
+              >
+                tas
+              </div>
             </div>
           </div>
-          <div
-            className="hover"
-            style={{ textAlign: "center", cursor: "pointer" }}
-          >
-            <div>
-              <i style={{ fontSize: "2.5rem" }} className="fas fa-book"></i>
-            </div>
-            <div
-              className="hover-text"
-              style={{
-                fontSize: "0.9rem",
-                marginTop: "10px",
-              }}
-            >
-              tas
-            </div>
-          </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };

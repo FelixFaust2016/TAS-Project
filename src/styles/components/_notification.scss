@@ -1,0 +1,59 @@
+.notification_containers {
+  display: flex;
+  width: 500px;
+  background-color: white;
+  height: 70px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 4;
+  border-radius: 4px;
+  box-shadow: 3px 3px 5px 6px rgba(22, 22, 22, 0.144);
+}
+
+.notification_status_container {
+  // background: var(--main-color);
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notification_status_container i {
+  font-size: 25px;
+  color: white;
+  font-weight: 200;
+}
+
+.notification_containers .notificaton_right {
+  flex: 1;
+  height: 100%;
+  padding: 0px 30px;
+  display: flex;
+  align-items: center;
+  color: black;
+  position: relative;
+
+  span {
+    position: absolute;
+    right: 30px;
+    font-size: 14px;
+    cursor: pointer;
+    color: grey;
+  }
+}
+.notification_right_text {
+  h3 {
+    // color: var(--main-color);
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  p {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.616);
+    margin: 0;
+    padding: 0;
+  }
+}
