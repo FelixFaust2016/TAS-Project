@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import {
   BrowserRouter,
@@ -8,11 +8,12 @@ import {
   NavLink,
   useHistory,
 } from "react-router-dom";
-import axios from 'axios';
-import { apiConfig } from '../config/axios';
+import axios from "axios";
+import { apiConfig } from "../config/axios";
 
 import Input from "../components/Input";
 import Button from "../components/Button";
+import Notification from "../components/Notification";
 
 import Logo from "../components/Logo";
 
@@ -25,12 +26,18 @@ import inp from "../assets/in-img.svg";
 const SignUp = (props) => {
   const history = useHistory();
 
+  const [message, setMessage] = useState(false);
+
+  const [showSuccessMessage, setShowSuccessMessage] = useState(true);
+
   const handleSignUp = (e) => {
     e.preventDefault();
     history.push("/home");
   };
 
-  const handleChange = () => { };
+  const closeSuccessMessage = () => {
+    setShowSuccessMessage(false);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -40,24 +47,29 @@ const SignUp = (props) => {
       lastName: e.target[1].value,
       email: e.target[2].value,
       username: e.target[3].value,
-      password: e.target[4].value
-    }
+      password: e.target[4].value,
+    };
 
     // console.log(firstName, lastName, email, userName, password);
-    console.log(details)
-    axios.post('http://174.138.46.137:8083/api/negst/auth/signup',
-      details
-
-    ).then((response) => {
-      console.log(response.data);
-    }).catch( e => {
-      console.log(e.response.data);
-    })
+    console.log(details);
+    axios
+      .post("http://174.138.46.137:8083/api/negst/auth/signup", details)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((e) => {
+        console.log(e.response.data);
+      });
     // console.log(new FormData(e.target));
   };
 
   return (
     <div className="form-container">
+      {showSuccessMessage === true ? (
+        <Notification state={message} close={closeSuccessMessage} />
+      ) : (
+        ""
+      )}
       <div className="form-div">
         {/* <div className="form-nav">
           <Logo color={"black"} />
